@@ -44,3 +44,12 @@ qué especificaste, qué revisaste y qué rechazaste.
 - **Rechazado / corregido:** Se corrigió la duplicación de workflows después de cambiar el check obligatorio a Formato, análisis y pruebas.
 - **Verificación:** El workflow conservado pasó los checks del PR #2. El CI de esta limpieza está pendiente.
 - **Commit / PR:** Pendiente.
+
+## Corrección de CODEOWNERS · @roberdeleon
+- **Herramienta:** ChatGPT/Codex.
+- **Especificación:** Corregir el usuario de Kenri.
+- **Resultado:** Reemplazo de @kenriysan por @kenrivsan en las cuatro reglas.
+- **Aceptado:** Usuario confirmado mediante los metadatos de GitHub.
+- **Rechazado / corregido:** La IA transcribió incorrectamente el usuario desde la captura.
+- **Verificación:** Lectura local de CODEOWNERS con el usuario corregido; subida y CI pendientes.
+- **Commit / PR:** https://github.com/roberdeleon/pdm-s14-ci-estados/pull/3
