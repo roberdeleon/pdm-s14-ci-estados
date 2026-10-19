@@ -98,3 +98,13 @@ qué especificaste, qué revisaste y qué rechazaste.
 - **Rechazado / corregido:** La IA transcribió incorrectamente el usuario desde la captura.
 - **Verificación:** Lectura local de CODEOWNERS con el usuario corregido; subida y CI pendientes.
 - **Commit / PR:** https://github.com/roberdeleon/pdm-s14-ci-estados/pull/3
+
+## Integración de pantallas · @roberdeleon
+- **Herramienta:** ChatGPT/Codex.
+- **Especificación:** Conectar Productos y Categorías desde un menú principal y comprobar los estados del laboratorio.
+- **Resultado:** Menú en main.dart, dos pruebas de navegación y entrada main_demo.dart para demostrar error, vacío y recuperación de Productos.
+- **Aceptado:** Reutilizar las pantallas y repositorios de ambas parejas; inyección por constructor y demora de dos segundos.
+- **Rechazado / corregido:** Se reemplazó la prueba del contador por pruebas de navegación. Para observar error y vacío se agregó una entrada de demostración separada: la primera consulta simula el escenario y la siguiente devuelve datos, sin modificar las pantallas de los compañeros.
+- **Verificación:** Análisis sin problemas y 23 pruebas aprobadas antes de agregar main_demo.dart. En Edge se comprobaron ambos listados, carga de Productos, error con recuperación mediante Reintentar y vacío con recuperación mediante Volver a cargar.
+- **Pendiente:** Verificación final incluyendo main_demo.dart, CI y aprobación del PR de integración.
+- **Commit / PR:** Pendiente.
