@@ -16,6 +16,16 @@ qué especificaste, qué revisaste y qué rechazaste.
 | Commit / PR | Enlace |
 
 ---
+## 2026-10-18 · @Javiersontay — pantalla y pruebas de productos
+
+- **Herramienta:** ChatGPT.
+- **Especificación:** Solicité apoyo para implementar la pantalla de listado de productos utilizando FutureBuilder e inyección del repositorio por constructor, incluyendo los estados cargando, error, vacío y datos. También solicité apoyo para crear pruebas de widget del estado de error, del funcionamiento de Reintentar y de la acción del estado vacío.
+- **Resultado:** Se creó `lib/features/productos/productos_screen.dart` y `test/features/productos/productos_screen_test.dart`.
+- **Aceptado:** Uso de `FutureBuilder`, repositorio inyectado por constructor, mensaje de error entendible para el usuario, botón Reintentar, estado vacío con acción funcional y listado de productos.
+- **Rechazado / corregido:** Se corrigió `separatorBuilder: (_, __)` por `separatorBuilder: (_, _)` después de que `flutter analyze` reportara una advertencia. También se evitó crear el `Future` directamente dentro de `build` para no iniciar consultas nuevas en cada reconstrucción.
+- **Verificación:** `dart format lib test` ejecutado; `flutter analyze` terminó con `No issues found!`; `flutter test` aprobó todas las pruebas del proyecto.
+- **Commit / PR:** Pendiente de commit y Pull Request de `feat/1-estados-productos`.
+
 
 ## 2026-10-18 · @EmmanuelC-04 — modelo y repositorio de productos
 
