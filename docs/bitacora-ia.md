@@ -19,6 +19,30 @@ qué especificaste, qué revisaste y qué rechazaste.
 
 
 
+## 2026-10-18 · @kenrivsan — Modelo, interfaz y repositorio simulado de categorías
+
+- **Herramienta:** Claude (Claude Code).
+- **Especificación:** Crear el modelo `Categoria`, la interfaz `CategoriasRepository` y un repositorio simulado cuya consulta devuelve un `Future` y permite simular demora, error, lista vacía y datos, con pruebas unitarias. Solo en `lib/features/categorias/` y `test/features/categorias/`, sin modificar `lib/main.dart` ni agregar servicios externos.
+- **Resultado:** `categoria.dart`, `categorias_repository.dart`, `categorias_repository_fake.dart` (escenarios `datos`, `vacio` y `error`, `demora` y contador `llamadas`) y 8 pruebas unitarias.
+- **Aceptado:** La estructura paralela a la de productos (interfaz, repositorio simulado y enum de escenarios); el `escenario` modificable para simular la recuperación tras un error; el contador `llamadas` para comprobar que Reintentar vuelve a consultar; y una prueba de la demora que verifica que la consulta no termina antes de tiempo en vez de medir con cronómetro, para evitar pruebas inestables.
+- **Rechazado / corregido:**
+  - Flutter 3.44.8 (Dart 3.12.2) no resolvía el `pubspec.yaml` (`^3.13.5`); se descartó verificar con ese SDK y se instaló Flutter 3.47.7 en una carpeta aparte, sin actualizar la instalación existente.
+  - La rama local se creó con `origin/main` como upstream; se quitó para evitar un push accidental a `main`.
+  - Los nombres propuestos para la pantalla antes de que existiera (`CategoriasScreen`, parámetro `repository`) no coincidían con los reales (`PantallaCategorias`, parámetro `repositorio`); se usan los reales en la información para Robert.
+  - Una versión del PR dejó la bitácora sin las entradas de Robert y otra sin la de Víctor; se reconstruyó con las entradas de Robert, la de Víctor y la de Kenneth.
+- **Verificación:** Con Flutter 3.47.7, `dart format` sin cambios, `flutter analyze` sin problemas y `flutter test` con 13 de 13 pruebas aprobadas (8 del repositorio, 4 de la pantalla y la prueba base). El job "Formato, análisis y pruebas" del CI del PR #5 pasó con el commit 8e47b63.
+- **Commit / PR:** 8e47b63 · https://github.com/roberdeleon/pdm-s14-ci-estados/pull/5
+
+## 2026-10-18 · @victordeleon172003 — Pantalla de categorías
+
+- **Herramienta:** ChatGPT.
+- **Especificación:** Crear una pantalla Flutter con cuatro estados y pruebas de widget.
+- **Resultado:** Pantalla de categorías y pruebas automáticas.
+- **Aceptado:** FutureBuilder, botón Reintentar y acción Actualizar.
+- **Rechazado / corregido:** Se reemplazó List<String> por List<Categoria> para utilizar el repositorio de Kenri. Se adaptaron las pruebas.
+- **Verificación:** dart format y flutter analyze sin errores. flutter test bloqueado localmente por la seguridad de Windows; pendiente verificar en CI.
+- **Commit / PR:** PR #5.
+
 ## 2026-10-18 · @roberdeleon — configuración inicial del laboratorio
 
 - **Herramienta:** ChatGPT/Codex.
