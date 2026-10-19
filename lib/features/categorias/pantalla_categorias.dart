@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 
-class PantallaCategorias extends StatefulWidget {
-  final Future<List<String>> Function() cargarCategorias;
+import 'categoria.dart';
+import 'categorias_repository.dart';
 
-  const PantallaCategorias({super.key, required this.cargarCategorias});
+class PantallaCategorias extends StatefulWidget {
+  final CategoriasRepository repositorio;
+
+  const PantallaCategorias({super.key, required this.repositorio});
 
   @override
   State<PantallaCategorias> createState() => _PantallaCategoriasState();
 }
 
 class _PantallaCategoriasState extends State<PantallaCategorias> {
-  late Future<List<String>> categorias;
+  late Future<List<Categoria>> categorias;
 
   @override
   void initState() {
     super.initState();
-    categorias = widget.cargarCategorias();
+    categorias = widget.repositorio.obtenerCategorias();
   }
 
   void reintentar() {
     setState(() {
-      categorias = widget.cargarCategorias();
+      categorias = widget.repositorio.obtenerCategorias();
     });
   }
 
@@ -28,7 +31,7 @@ class _PantallaCategoriasState extends State<PantallaCategorias> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Categorías')),
-      body: FutureBuilder<List<String>>(
+      body: FutureBuilder<List<Categoria>>(
         future: categorias,
         builder: (context, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
@@ -50,7 +53,7 @@ class _PantallaCategoriasState extends State<PantallaCategorias> {
             );
           }
 
-          final lista = snapshot.data ?? [];
+          final lista = snapshot.data ?? <Categoria>[];
 
           if (lista.isEmpty) {
             return Center(
@@ -72,7 +75,7 @@ class _PantallaCategoriasState extends State<PantallaCategorias> {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: const Icon(Icons.category),
-                title: Text(lista[index]),
+                title: Text(lista[index].nombre),
               );
             },
           );
