@@ -35,3 +35,21 @@ qué especificaste, qué revisaste y qué rechazaste.
 - **Verificación realizada:** La aplicación abrió en Edge y el contador funcionó; flutter analyze terminó sin problemas; flutter test aprobó la prueba inicial; el CI del PR #1 quedó en verde.
 - **Pendiente:** Completar la adaptación del workflow de referencia, verificar los cambios de chore/ci, obtener revisión, comprobar el rechazo del push directo y desarrollar las pantallas con sus pruebas.
 - **Commit / PR:** Base: 03f4e02. CI inicial: https://github.com/roberdeleon/pdm-s14-ci-estados/pull/1 . PR de chore/ci pendiente.
+
+## Limpieza de CI · @roberdeleon
+- **Herramienta:** ChatGPT/Codex.
+- **Especificación:** Retirar el workflow inicial tras integrar el del docente.
+- **Resultado:** Eliminación de .github/workflows/flutter-ci.yml.
+- **Aceptado:** Conservar ci.yml con formato, análisis, pruebas y APK.
+- **Rechazado / corregido:** Se corrigió la duplicación de workflows después de cambiar el check obligatorio a Formato, análisis y pruebas.
+- **Verificación:** El workflow conservado pasó los checks del PR #2. El CI de esta limpieza está pendiente.
+- **Commit / PR:** Pendiente.
+
+## Corrección de CODEOWNERS · @roberdeleon
+- **Herramienta:** ChatGPT/Codex.
+- **Especificación:** Corregir el usuario de Kenri.
+- **Resultado:** Reemplazo de @kenriysan por @kenrivsan en las cuatro reglas.
+- **Aceptado:** Usuario confirmado mediante los metadatos de GitHub.
+- **Rechazado / corregido:** La IA transcribió incorrectamente el usuario desde la captura.
+- **Verificación:** Lectura local de CODEOWNERS con el usuario corregido; subida y CI pendientes.
+- **Commit / PR:** https://github.com/roberdeleon/pdm-s14-ci-estados/pull/3
