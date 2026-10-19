@@ -17,6 +17,17 @@ qué especificaste, qué revisaste y qué rechazaste.
 
 ---
 
+## 2026-10-18 · @EmmanuelC-04 — modelo y repositorio de productos
+
+- **Herramienta:** Codex.
+- **Especificación:** Implementar únicamente el modelo `Producto`, el contrato `ProductosRepository`, un repositorio simulado con datos, vacío, error y demora configurable, y sus pruebas unitarias. Permitir una consulta exitosa después de un error sin añadir interfaz, servicios externos ni dependencias.
+- **Resultado:** Se crearon `lib/features/productos/producto.dart`, `productos_repository.dart`, `productos_repository_fake.dart` y `test/features/productos/productos_repository_test.dart`.
+- **Aceptado:** Campos inmutables en `Producto`; contrato asíncrono para inyección; escenario modificable en el repositorio simulado para que una nueva consulta pueda recuperarse de un error; copia de la lista configurada al devolver datos.
+- **Rechazado / corregido:** No hubo propuestas rechazadas ni correcciones de código durante esta implementación.
+- **Problemas detectados:** El primer intento de ejecutar Flutter no pudo abrir el archivo de bloqueo del SDK por las restricciones del entorno. Se ejecutaron las validaciones con acceso al SDK habilitado. La rama asignada no existía localmente ni en remoto; se creó desde `main`, que coincidía con `origin/main` después de actualizar las referencias.
+- **Verificación:** `dart format lib test` no cambió archivos; `flutter analyze` terminó sin problemas; `flutter test` aprobó las seis pruebas nuevas y la prueba de widget existente.
+- **Commit / PR:** Pendiente de revisión; no se creó commit ni PR.
+
 
 
 ## 2026-10-18 · @roberdeleon — configuración inicial del laboratorio
