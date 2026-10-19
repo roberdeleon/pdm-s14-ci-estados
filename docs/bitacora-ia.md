@@ -53,3 +53,14 @@ qué especificaste, qué revisaste y qué rechazaste.
 - **Rechazado / corregido:** La IA transcribió incorrectamente el usuario desde la captura.
 - **Verificación:** Lectura local de CODEOWNERS con el usuario corregido; subida y CI pendientes.
 - **Commit / PR:** https://github.com/roberdeleon/pdm-s14-ci-estados/pull/3
+
+
+## 2026-10-18 · @victordeleon172003 — Pantalla de categorías
+
+- **Herramienta:** ChatGPT.
+- **Especificación:** Crear pantalla Flutter con cuatro estados y pruebas de widget.
+- **Resultado:** Pantalla de categorías con FutureBuilder y pruebas.
+- **Aceptado:** Estados cargando, error, vacío y datos; botones Reintentar y Actualizar.
+- **Rechazado / corregido:** Se cambió List<String> por List<Categoria> para integrar el repositorio de Kenneth.
+- **Verificación:** dart format y flutter analyze sin errores. Pruebas locales bloqueadas por seguridad de Windows; verificación mediante CI.
+- **Commit / PR:** PR #5.
